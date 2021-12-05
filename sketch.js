@@ -51,7 +51,7 @@ function preload() {
       '?access_token=pk.eyJ1IjoibWp2YXIiLCJhIjoiY2t3bHhqeTh3MjZmbTJvcXZ0MHdvb3JhOCJ9.gaBYnlPzukeVP9LhKar1YA'
   );
   // Load .csv of flights
-  flights = loadTable("viz/flight_data.csv","csv","header");
+  flights = loadTable("flight_data.csv","csv","header");
 }
 
 

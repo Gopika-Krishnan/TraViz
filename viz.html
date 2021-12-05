@@ -8,5 +8,23 @@
     <script src="viz/sketch.js"></script>
     <script src="viz/flights.js"></script>
   <button onclick="save('myCanvas.jpg');">Save Map</button>
+  <form>
+    <label for="origin">Origin:</label><br>
+    <input type="text" id="origin" name="origin"><br>
+    <label for="destination">Destination:</label><br>
+    <input type="text" id="destination" name="destination"><br>
 
-</body></html>
+    <input type="radio" id="plane" name="mode" value="plane">
+    <label for="html">Plane</label><br>
+    <input type="radio" id="bus" name="mode" value="bus">
+    <label for="css">Bus</label><br>
+    <input type="radio" id="train" name="mode" value="train">
+    <label for="javascript">Train</label><br>
+
+    <label for="year">Year:</label><br>
+    <input type="text" id="year" name="year"><br>
+  </form>
+  <button onclick="createFlightFromForm()">Submit</button>
+
+  </body>
+</html>

@@ -1,6 +1,8 @@
 // Diameter for circles of airport
 const diameter = 15;
 
+const locIQKey = "pk.a937dd2ef894eebff53ed453a0afc87b";
+
 // Class for any given flight.
 // Contains origin and destination coordinates,
 // origin and destination names, and year of travel.
@@ -80,7 +82,7 @@ class Flight{
 // Load flights from table into objects
 function loadFlights() {
 	var cx = mercX(clon);
-  	var cy = mercY(clat);
+  var cy = mercY(clat);
 	for (let x = 0; x < flights.getRowCount(); x++){
 		flightObjects[x] = new Flight(
 			// Here we map the latitude and longitude
@@ -95,6 +97,61 @@ function loadFlights() {
 			flights.getColumn("mode")[x]);
 		console.log(flightObjects[x]);
 	}
+}
+
+function Get(yourUrl){
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET",yourUrl,false);
+    Httpreq.send(null);
+    return Httpreq.responseText;          
+}
+
+function createFlightFromForm() {
+	var cx = mercX(clon);
+  var cy = mercY(clat);
+
+  // Getting values from form
+  var from_name = document.getElementById('origin').value;
+  var to_name = document.getElementById('destination').value;
+  var year = document.getElementById('year').value;
+  var mode = 'p';
+  if (document.getElementById('plane').checked){
+  	mode = 'p';
+  }
+  else if (document.getElementById('bus').checked){
+  	mode = 'b';
+  }
+  else if (document.getElementById('train').checked){
+  	mode = 't';
+  }
+
+
+
+  // Making request to locationIQ
+  var jsonObj_from = JSON.parse(Get("https://us1.locationiq.com/v1/search.php?key=" +
+  	locIQKey + 
+  	"&q=" + from_name
+  	+ "&format=json&limit=1"));
+  var jsonObj_to = JSON.parse(Get("https://us1.locationiq.com/v1/search.php?key=" +
+  	locIQKey + 
+  	"&q=" + to_name
+  	+ "&format=json&limit=1"));
+
+  if (jsonObj_from[0] == null || jsonObj_to[0] == null){
+  	alert("Looks like your location input is invalid. Sorry!");
+  }
+
+  flightObjects.push(
+  	new Flight(
+			mercX(jsonObj_from[0]['lon'])-cx,
+			mercY(jsonObj_from[0]['lat'])-cy,
+			mercX(jsonObj_to[0]['lon'])-cx,
+			mercY(jsonObj_to[0]['lat'])-cy,
+			from_name,
+			to_name,
+			year,
+			mode
+  ));
 }
 
 function mercX(lon) {
@@ -117,7 +174,7 @@ function displayAll() {
 	// info is the array of flights that are
 	// currently being moused over
 	let info = [];
-	for(let x = 0; x < flights.getRowCount(); x++) {
+	for(let x = 0; x < flightObjects.length; x++) {
 		// Every frame, check if each flight is being moused over
 		flightObjects[x].checkMouse();
 		flightObjects[x].drawFlight();
@@ -150,9 +207,9 @@ function displayAll() {
 
 	// Change text align based on position of circle
 	if(mouseX > width/2){
-		textAlign(RIGHT, BOTTOM);
+		textAlign(RIGHT, TOP);
 	} else {
-		textAlign(LEFT, BOTTOM);
+		textAlign(LEFT, TOP);
 	}
 	text(displayText, mouseX-width/2, mouseY-height/2);
 	fill(255);

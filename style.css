@@ -335,15 +335,32 @@ section {
 	font-size: 1.75em;
 }
 
-.center-box label {
+.center-box, .viz-form label {
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 400;
 	font-size: 0.9em;
 }
 
-.center-box input {
+.center-box, .viz-form input {
 	margin-bottom: 15px;
 }
+
+.viz-form {
+	margin:  25px;
+	margin-top: 0;
+}
+
+.btns {
+	margin-left: 25px;
+}
+
+.viz {
+	display: block;
+	justify-content: center;
+	align-items: center;
+	background-color: #E5F4FF ;
+}
+
 .center-box-content {
 	width: 300px;
 	height: 250px;
@@ -354,17 +371,38 @@ section {
 .footer{
 	background-color: #001d52;
 	color:  white;
-	text-align: center;
+/*	text-align: center;*/
 	height: 40vh;
 	left: 0;
 	bottom: 0;
-	min-height: 400px;
+	min-height: 230px;
 	position: relatives;
 	background-size: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	/*	margin-bottom: 30%;*/
+	color: white;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+/*	display: flex;*/
+	/*grid-template-columns: 1fr 1 fr;*/
+/*	justify-content: center;
+	align-items: center;*/
 }
+
+
+.footer-content {
+	display: flex;
+/*	justify-content: center;*/
+	align-items: center;
+	padding: 30px;
+	padding-left: 45px;
+	padding-top: 45px;
+}
+
+.course-det {
+	padding-right:  350px;
+}
+
 
 .s1, .s3 {
     position: relative;

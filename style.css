@@ -1,0 +1,380 @@
+<style>
+
+html {
+/*	margin:  0;*/
+/*	height:  100%;
+	width:  100%;
+	padding:  0;*/
+	scroll-behavior: smooth;
+}
+
+body {
+	margin: 0;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .s1, .s3 {
+    background-attachment: scroll;
+  }
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0px;
+	position: fixed;
+	overflow: hidden;
+	background-color: #333;
+	width: 100%;
+	z-index: 2;
+}
+
+nav {
+	order:  1;
+	position: sticky;
+	top:  0;
+}
+
+
+/*.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}*/
+/*body {
+	margin: 0;
+	height:  100%;
+	width: 100%;
+	padding: 0;
+}*/
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+}
+
+
+/*ul {
+	border:  0px;
+	list-style-type: none;
+	margin: 0;
+	padding:  0;
+	overflow: hidden;
+	background-color:  #333;
+	position: fixed;
+	top:  0;
+	width:  100%;
+	display: inline-block;
+}
+*/
+li {
+	display: inline-block;
+	padding: 0px 0px;
+	/*margin-top: 28px;
+	margin-left: 10px;
+	margin-right: 35px;*/
+	/*float:  right;*/
+}
+
+li a {
+	display:  block;
+	color:  white;
+	padding:  14px 16px;
+	text-decoration: none;
+}
+
+li a:hover {
+	background-color: #111;
+}
+
+section {
+	display: block;
+	height:  100vh;
+}
+
+.btn {
+	background-color: #72ADD8;
+	border:  none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display:  inline-block;
+	font-size:  16px;
+	margin:  4px 2px;
+	border-radius: 12px;
+	cursor: pointer;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+}
+
+.btn:hover{
+	background-color: #72A3D8;
+}
+
+.s1{
+	/*background-color: #324;*/
+	background-image: url('images/bg1.jpg');
+	min-height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/*position: relative;*/
+}
+
+.home-text, .trip-planner-text, .login-text {
+	position: absolute;
+	padding:  10%;
+	/*width:  100%;*/
+	/*top:  50%;
+	left:  50%;
+	transform: translate(-50%, -50%);*/
+	text-align: center;
+}
+
+
+.s1 h1 {
+	color: #001447;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 4.5em;
+}
+
+.s1 h3 {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.25em;
+	color: #D1DEEE;
+}
+
+.s2{
+	background-color: #E5F4FF;
+	min-height: 100%;
+	height: 100vh;
+  background-size: 100%;
+  display: flex;
+	justify-content: center;
+	align-items: center;
+	/*position: relative;*/
+}
+
+.s2 p {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.25em;
+	color: #001447;
+}
+
+.s2 h1 {
+	color: #001447;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 4.4em;
+}
+
+.s3{
+	background-image: url('images/bg2.jpg');
+	min-height: 100%;
+	height: 100vh;
+  background-size: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.s3 p{
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.25em;
+	color: #D1DEEE;
+	text-shadow: 2px 2px #001447;
+}
+
+.s3 h1 {
+	color: #001447;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 4.4em;
+	text-shadow: 0.5px 0.5px #D1DEEE;
+}
+
+.login-table {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 100px;
+}
+
+.column {
+ text-align: center;
+}
+
+.main-canvas-about {
+	background-color: #E5F4FF;
+	/*padding:  5%;*/
+}
+
+.about-heading {
+	background-image: url('images/bg4.jpg');
+	background-size: cover;
+	height: 150px;
+	padding: 10%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.about-heading h1 {
+	color: #001447;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 4.5em;
+}
+
+.project-des {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1.25em;
+	color: #001447;
+	padding-top:  7%;
+	padding-left: 25%;
+	padding-right: 25%;
+	padding-bottom: 3%;
+/*	background-color: #E5F4FF;*/
+/*	text-align: center;*/
+}
+
+.team {
+	padding:  0;
+}
+
+.team-heading {
+	font-family: 'PT Sans', sans-serif;
+	text-align: center;
+	font-weight: 700;
+	font-size: 2em;
+}
+
+.members {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 12px;
+	justify-items: center;
+	align-items: center;
+	grid-auto-flow: column;
+	padding: 5%;
+	padding-top: 0;
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.member {
+  display: block;
+  width: 250px;
+  height: 350px;
+  background-color: #B5D4EC;
+  box-shadow: 5px 5px #001d52;
+}
+
+.mem-text {
+	margin:  20px;
+	margin-top: 10px;
+}
+
+.member h3 {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 1.25em;
+	margin: 0;
+}
+
+.member p {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 1em;
+	margin: 0;
+	margin-top: 5px;
+}
+
+.member-photo{
+  width: 250px;
+  height: 250px;
+}
+
+/*.team {
+	background-color: #E5F4FF;
+}*/
+
+.main-canvas-login {
+	background-image: url('images/login.jpg');	
+	background-size: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.center-box{
+	background-color: #E5F4FF;
+	height: 500px;
+	width: 350px;
+	box-shadow: 5px 5px #001d52;
+	display: flex;
+/*	justify-content: center;
+	align-items: center;*/
+}
+
+.center-box h2 {
+	margin-bottom: 30%;
+	color: #001447;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 700;
+	font-size: 1.75em;
+}
+
+.center-box label {
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	font-size: 0.9em;
+}
+
+.center-box input {
+	margin-bottom: 15px;
+}
+.center-box-content {
+	width: 300px;
+	height: 250px;
+	margin-left: 10%;
+	margin-top: 25%;
+}
+
+.footer{
+	background-color: #001d52;
+	color:  white;
+	text-align: center;
+	height: 40vh;
+	left: 0;
+	bottom: 0;
+	min-height: 400px;
+	position: relatives;
+	background-size: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.s1, .s3 {
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-size: 100%;
+}
+
+</style>

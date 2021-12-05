@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TraViz - About</title>
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href = "style.css" rel = "stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+				<nav>
+					<ul>
+						<li><a href = "#footer"> About </a></li>
+						<li><a href = "#login"> Login </a></li>
+						<li><a href = "#trip-planner"> Plan Trip </a></li>
+						<li><a href = "#home"> Home </a></li>
+					</ul>
+				</nav>
+		</header>
+		<div class = "main-canvas-login">
+			<div class = "center-box">
+				<div class = "center-box-content">
+					<h2> It's great to see you again. </h2>
+					<form onsubmit="validate()">
+						<label for = "username"> Username </label><br>
+						<input type = "text" id = "username" name = "username"><br>
+						<label for = "password"> Password </label><br>
+						<input type = "text" id = "password" name = "password"><br>
+						<input type="submit" value="Login" class = "btn">
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class = "footer">
+				<p>this is the footer</p>
+		</div>
+		<script type="text/javascript">
+			function validate() {
+				let uname = document.getElementById("username").value;
+				let pwd = document.getElementById("password").value;
+				if ((uname == "john123") && (pwd == "12345")) {
+					window.alert("Successful login");
+				} else {
+					window.alert("Invalid");
+				}
+			}
+		</script>
+	</body>
+</html>

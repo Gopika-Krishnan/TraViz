@@ -361,6 +361,12 @@ section {
 	background-color: #E5F4FF ;
 }
 
+.plan-trip-canvas {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .center-box-content {
 	width: 300px;
 	height: 250px;

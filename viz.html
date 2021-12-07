@@ -1,5 +1,6 @@
 <!DOCTYPE html><html lang="en"><head>
     <script src="p5.js"></script>
+    <script src="sketch.js" type="text/javascript"></script>
     <link rel="stylesheet" href="style.css">
     <meta charset="utf-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,27 +20,34 @@
           </ul>
         </nav>
     </header>
-  <form class = "viz-form">
-    <label for="origin">Origin:</label><br>
-    <input type="text" id="origin" name="origin"><br>
-    <label for="destination">Destination:</label><br>
-    <input type="text" id="destination" name="destination"><br>
 
-    <input type="radio" id="plane" name="mode" value="plane">
-    <label for="html">Plane</label><br>
-    <input type="radio" id="bus" name="mode" value="bus">
-    <label for="css">Bus</label><br>
-    <input type="radio" id="train" name="mode" value="train">
-    <label for="javascript">Train</label><br>
 
-    <label for="year">Year:</label><br>
-    <input type="text" id="year" name="year"><br>
-  </form>
-      <script src="sketch.js"></script>
+  <div class = "plan-trip-canvas">
+    <div class ="viz-info">
+      <form class = "viz-form">
+        <label for="origin">Origin:</label><br>
+        <input type="text" id="origin" name="origin"><br>
+        <label for="destination">Destination:</label><br>
+        <input type="text" id="destination" name="destination"><br>
+
+        <input type="radio" id="plane" name="mode" value="plane">
+        <label for="html">Plane</label><br>
+        <input type="radio" id="bus" name="mode" value="bus">
+        <label for="css">Bus</label><br>
+        <input type="radio" id="train" name="mode" value="train">
+        <label for="javascript">Train</label><br>
+
+        <label for="year">Year:</label><br>
+        <input type="text" id="year" name="year"><br>
+      </form>
+      <div class = "btns">
+        <button onclick="createFlightFromForm()" class = "btn">Submit</button>
+        <button onclick="save('myCanvas.jpg');" class ="btn">Save Map</button>
+      </div>
+    </div>
+    <div id='visualization'></div>
+    <script src="sketch.js"></script>
     <script src="flights.js"></script>
-  <div class = "btns">
-    <button onclick="createFlightFromForm()" class = "btn">Submit</button>
-    <button onclick="save('myCanvas.jpg');" class ="btn">Save Map</button>
   </div>
   <div class = "footer">
           <div class = "footer-content">
@@ -56,8 +64,6 @@
           </div>
         </div>
         </div>
-
-
       </div>
   </body>
 </html>

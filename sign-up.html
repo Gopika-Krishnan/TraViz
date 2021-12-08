@@ -28,7 +28,7 @@
 			<div class = "center-box">
 				<div class = "center-box-content">
 					<h2> Come and explore the world with us. Join Now. </h2>
-					<form class = "sign-up-form">
+					<form class = "sign-up-form" onsubmit="validate()">
 						<label for = "name"> Name </label><br>
 						<input type="text" id = "name" name="name"><br>
 						<label for = "email"> Email </label><br>
@@ -36,7 +36,7 @@
 						<label for = "username"> Username </label><br>
 						<input type = "text" id = "username" name = "username"><br>
 						<label for = "password"> Password </label><br>
-						<input type = "text" id = "password" name = "password"><br>
+						<input type = "password" id = "password" name = "password"><br>
 						<input type="submit" value="Sign Up" class = "btn">
 					</form>
 				</div>
@@ -58,5 +58,41 @@
 				</div>
 			</div>
 		</div>
+		<!---Javascript-->
+		<script>
+			function validate() {	
+				//regex patterns
+				var letters = /^[A-Za-z]+$/; //all alphabets only
+				var em = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; //things email address must contain
+				var un = /^[a-zA-Z0-9]+$/; //alphabets and numbers only
+
+				//get variables from form 
+				let name = document.getElementById("name").value;
+				let email = document.getElementById("email").value;
+				let username = document.getElementById("username").value;
+
+				//check if name is just letters
+				if (!name.match(letters)) {
+					alert("Name can only be alphabet characters.")
+					return;
+				}
+
+				//check if email is valid
+				if (em.test(email) == false) {
+					alert("Invalid email address.")
+					return;
+				}
+
+				//check if username is numbers and letters only
+				if (!username.match(un)) {
+					alert("Username can only contain alphabets and numbers.")
+					return;
+				}
+
+				//if all conventions are followed, account should be successfully created
+				alert("Account created successfully.")
+				return;
+			}
+		</script>
 	</body>
 	</html>

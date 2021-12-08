@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TraViz - Sign  Up</title>
+		<meta charset="utf-8"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href = "style.css" rel = "stylesheet">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<header>
+				<nav>
+					<!--NAVIGATION BAR-->
+					<ul>
+						<li><a href = "index.html"> Home </a></li>
+						<li><a href = "viz.html"> Plan Trip </a></li>
+						<li><a href = "login.html"> Login </a></li>
+						<li><a href = "sign-up.html"> Sign Up </a></li>
+						<li><a href = "about.html"> About </a></li>
+					</ul>
+				</nav>
+		</header>
+
+		<div class = "main-canvas-signup">
+			<!--box in the center of page that will contain form-->
+			<div class = "center-box">
+				<div class = "center-box-content">
+					<h2> Come and explore the world with us. Join Now. </h2>
+					<form class = "sign-up-form" onsubmit="validate()">
+						<label for = "name"> Name </label><br>
+						<input type="text" id = "name" name="name"><br>
+						<label for = "email"> Email </label><br>
+						<input type="text" id = "email" name="email"><br>
+						<label for = "username"> Username </label><br>
+						<input type = "text" id = "username" name = "username"><br>
+						<label for = "password"> Password </label><br>
+						<input type = "password" id = "password" name = "password"><br>
+						<input type="submit" value="Sign Up" class = "btn">
+					</form>
+				</div>
+			</div>
+		</div>
+		<!--FOOTER-->
+		<div class = "footer">
+			<div class = "footer-content">
+				<div class = "course-det">
+					<p> CS-UH 2012 - Software Engineering </p>
+					<p>	Professor Mai Oudah </p>
+					<p> New York University Abu Dhabi </p>
+				</div>
+				<div class = "loc">
+					<p> New York University Abu Dhabi </p>
+					<p> Saadiyat Island </p>
+					<p> Abu Dhabi </p>
+					<p> United Arab Emirates </p>
+				</div>
+			</div>
+		</div>
+		<!---Javascript-->
+		<script>
+			function validate() {	
+				//regex patterns
+				var letters = /^[A-Za-z]+$/; //all alphabets only
+				var em = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/; //things email address must contain
+				var un = /^[a-zA-Z0-9]+$/; //alphabets and numbers only
+
+				//get variables from form 
+				let name = document.getElementById("name").value;
+				let email = document.getElementById("email").value;
+				let username = document.getElementById("username").value;
+
+				//check if name is just letters
+				if (!name.match(letters)) {
+					alert("Name can only be alphabet characters.")
+					return;
+				}
+
+				//check if email is valid
+				if (em.test(email) == false) {
+					alert("Invalid email address.")
+					return;
+				}
+
+				//check if username is numbers and letters only
+				if (!username.match(un)) {
+					alert("Username can only contain alphabets and numbers.")
+					return;
+				}
+
+				//if all conventions are followed, account should be successfully created
+				alert("Account created successfully.")
+				return;
+			}
+		</script>
+	</body>
+	</html>

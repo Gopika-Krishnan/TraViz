@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>TraViz - Login</title>
+		<title>TraViz - Sign  Up</title>
 		<meta charset="utf-8"> 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href = "style.css" rel = "stylesheet">
@@ -22,48 +22,41 @@
 					</ul>
 				</nav>
 		</header>
-		<!--main canvas-->
-		<div class = "main-canvas-login">
+
+		<div class = "main-canvas-signup">
 			<!--box in the center of page that will contain form-->
 			<div class = "center-box">
 				<div class = "center-box-content">
-					<h2> It's great to see you again. </h2>
-					<form onsubmit="validate()">
+					<h2> Come and explore the world with us. Join Now. </h2>
+					<form class = "sign-up-form">
+						<label for = "name"> Name </label><br>
+						<input type="text" id = "name" name="name"><br>
+						<label for = "email"> Email </label><br>
+						<input type="text" id = "email" name="email"><br>
 						<label for = "username"> Username </label><br>
 						<input type = "text" id = "username" name = "username"><br>
 						<label for = "password"> Password </label><br>
 						<input type = "text" id = "password" name = "password"><br>
-						<input type="submit" value="Login" class = "btn">
+						<input type="submit" value="Sign Up" class = "btn">
 					</form>
 				</div>
 			</div>
 		</div>
 		<!--FOOTER-->
 		<div class = "footer">
-				<div class = "footer-content">
-					<div class = "course-det">
-						<p> CS-UH 2012 - Software Engineering </p>
-						<p>	Professor Mai Oudah </p>
-						<p> New York University Abu Dhabi </p>
-					</div>
-					<div class = "loc">
-						<p> New York University Abu Dhabi </p>
-						<p> Saadiyat Island </p>
-						<p> Abu Dhabi </p>
-						<p> United Arab Emirates </p>
-					</div>
+			<div class = "footer-content">
+				<div class = "course-det">
+					<p> CS-UH 2012 - Software Engineering </p>
+					<p>	Professor Mai Oudah </p>
+					<p> New York University Abu Dhabi </p>
 				</div>
+				<div class = "loc">
+					<p> New York University Abu Dhabi </p>
+					<p> Saadiyat Island </p>
+					<p> Abu Dhabi </p>
+					<p> United Arab Emirates </p>
+				</div>
+			</div>
 		</div>
-		<script type="text/javascript">
-			function validate() {
-				let uname = document.getElementById("username").value;
-				let pwd = document.getElementById("password").value;
-				if ((uname == "john123") && (pwd == "12345")) {
-					window.alert("Successful login");
-				} else {
-					window.alert("Invalid");
-				}
-			}
-		</script>
 	</body>
-</html>
+	</html>

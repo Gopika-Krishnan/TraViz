@@ -1,10 +1,6 @@
 <style>
 
 html {
-/*	margin:  0;*/
-/*	height:  100%;
-	width:  100%;
-	padding:  0;*/
 	scroll-behavior: smooth;
 }
 
@@ -18,6 +14,7 @@ body {
   }
 }
 
+/*Arrangement of navigation bar*/
 header {
 	display: flex;
 	justify-content: space-between;
@@ -30,6 +27,8 @@ header {
 	z-index: 2;
 }
 
+
+/*make sure navigation bar is always on top of the page*/
 nav {
 	order:  1;
 	position: sticky;
@@ -37,18 +36,7 @@ nav {
 }
 
 
-/*.clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}*/
-/*body {
-	margin: 0;
-	height:  100%;
-	width: 100%;
-	padding: 0;
-}*/
-
+/*Navigation bar styling*/
 ul {
 	list-style: none;
 	margin: 0;
@@ -57,27 +45,9 @@ ul {
 	font-weight: 400;
 }
 
-
-/*ul {
-	border:  0px;
-	list-style-type: none;
-	margin: 0;
-	padding:  0;
-	overflow: hidden;
-	background-color:  #333;
-	position: fixed;
-	top:  0;
-	width:  100%;
-	display: inline-block;
-}
-*/
 li {
 	display: inline-block;
 	padding: 0px 0px;
-	/*margin-top: 28px;
-	margin-left: 10px;
-	margin-right: 35px;*/
-	/*float:  right;*/
 }
 
 li a {
@@ -87,56 +57,29 @@ li a {
 	text-decoration: none;
 }
 
+/*Change color when you hover over navigation bar*/
 li a:hover {
 	background-color: #111;
 }
 
+/*LANDING PAGE*/
+
+/*home page sectioning*/
 section {
 	display: block;
 	height:  100vh;
 }
 
-.btn {
-	background-color: #72ADD8;
-	border:  none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display:  inline-block;
-	font-size:  16px;
-	margin:  4px 2px;
-	border-radius: 12px;
-	cursor: pointer;
-	font-family: 'PT Sans', sans-serif;
-	font-weight: 400;
-}
-
-.btn:hover{
-	background-color: #72A3D8;
-}
-
+/*site title*/
 .s1{
-	/*background-color: #324;*/
 	background-image: url('images/bg1.jpg');
 	min-height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/*position: relative;*/
 }
 
-.home-text, .trip-planner-text, .login-text {
-	position: absolute;
-	padding:  10%;
-	/*width:  100%;*/
-	/*top:  50%;
-	left:  50%;
-	transform: translate(-50%, -50%);*/
-	text-align: center;
-}
-
-
+/*site title font styling*/
 .s1 h1 {
 	color: #001447;
 	font-family: 'PT Sans', sans-serif;
@@ -151,6 +94,7 @@ section {
 	color: #D1DEEE;
 }
 
+/*site description/introduction*/
 .s2{
 	background-color: #E5F4FF;
 	min-height: 100%;
@@ -159,9 +103,10 @@ section {
   display: flex;
 	justify-content: center;
 	align-items: center;
-	/*position: relative;*/
 }
 
+
+/*site description/introduction font styling*/
 .s2 p {
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 400;
@@ -176,6 +121,8 @@ section {
 	font-size: 4.4em;
 }
 
+
+/*reasons to sign up section*/
 .s3{
 	background-image: url('images/bg2.jpg');
 	min-height: 100%;
@@ -202,6 +149,50 @@ section {
 	text-shadow: 0.5px 0.5px #D1DEEE;
 }
 
+/*Center all test within the sites sections*/
+.home-text, .trip-planner-text, .login-text {
+	position: absolute;
+	padding:  10%;
+	text-align: center;
+}
+
+/*enable parallax scrolling*/
+.s1, .s3 {
+    position: relative;
+    opacity: 0.65;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    background-size: 100%;
+}
+
+
+/*website button styling*/
+.btn {
+	background-color: #72ADD8;
+	border:  none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display:  inline-block;
+	font-size:  16px;
+	margin:  4px 2px;
+	border-radius: 12px;
+	cursor: pointer;
+	font-family: 'PT Sans', sans-serif;
+	font-weight: 400;
+	margin-top: 15px;
+}
+
+/*change color of button when you hover*/
+.btn:hover{
+	background-color: #72A3D8;
+}
+
+
 .login-table {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -212,11 +203,15 @@ section {
  text-align: center;
 }
 
+/*about page main canvas*/
 .main-canvas-about {
 	background-color: #E5F4FF;
-	/*padding:  5%;*/
 }
 
+/*ABOUT PAGE*/
+
+
+/*Heading section for about page styling*/
 .about-heading {
 	background-image: url('images/bg4.jpg');
 	background-size: cover;
@@ -227,6 +222,7 @@ section {
 	align-items: center;
 }
 
+/*about heading font styling*/
 .about-heading h1 {
 	color: #001447;
 	font-family: 'PT Sans', sans-serif;
@@ -234,6 +230,8 @@ section {
 	font-size: 4.5em;
 }
 
+
+/*Little project description*/
 .project-des {
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 400;
@@ -243,14 +241,14 @@ section {
 	padding-left: 25%;
 	padding-right: 25%;
 	padding-bottom: 3%;
-/*	background-color: #E5F4FF;*/
-/*	text-align: center;*/
 }
 
+/*section for team member intros*/
 .team {
 	padding:  0;
 }
 
+/*Meet the team! heading*/
 .team-heading {
 	font-family: 'PT Sans', sans-serif;
 	text-align: center;
@@ -258,6 +256,7 @@ section {
 	font-size: 2em;
 }
 
+/*container class for all members, each individual member is a column */
 .members {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -271,6 +270,7 @@ section {
 	margin-right: 15%;
 }
 
+/*individual member block styling*/
 .member {
   display: block;
   width: 250px;
@@ -304,10 +304,9 @@ section {
   height: 250px;
 }
 
-/*.team {
-	background-color: #E5F4FF;
-}*/
+/*LOGIN PAGE*/
 
+/*main canvas for login page*/
 .main-canvas-login {
 	background-image: url('images/login.jpg');	
 	background-size: 100%;
@@ -317,22 +316,38 @@ section {
 	align-items: center;
 }
 
+
+/*SIGN UP PAGE*/
+
+.main-canvas-signup {
+	background-image: url('images/signup.jpg');	
+	background-size: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*login, sign up form will be in a box in the center of the page*/
 .center-box{
 	background-color: #E5F4FF;
 	height: 500px;
 	width: 350px;
 	box-shadow: 5px 5px #001d52;
 	display: flex;
-/*	justify-content: center;
-	align-items: center;*/
 }
 
 .center-box h2 {
 	margin-bottom: 30%;
+	margin-top: 25%;
 	color: #001447;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 700;
 	font-size: 1.75em;
+}
+
+.main-canvas-login h2 {
+	margin-top: 130px;
 }
 
 .center-box, .viz-form label {
@@ -345,15 +360,30 @@ section {
 	margin-bottom: 15px;
 }
 
+.center-box-content {
+	margin-left: 25%;
+	margin-right: 25%;
+}
+
+.sign-up-form {
+	padding-bottom: 25%;
+	margin-top: 1.5em;
+}
+
+/*PLAN TRIP PAGE*/
+
+/*form for inputting data*/
 .viz-form {
 	margin:  25px;
 	margin-top: 0;
 }
 
+/*submit & save canvas buttons*/
 .btns {
 	margin-left: 25px;
 }
 
+/*settings for body of viz page*/
 .viz {
 	display: block;
 	justify-content: center;
@@ -361,44 +391,34 @@ section {
 	background-color: #E5F4FF ;
 }
 
+/*main canvas for viz page*/
 .plan-trip-canvas {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.center-box-content {
-	width: 300px;
-	height: 250px;
-	margin-left: 10%;
-	margin-top: 25%;
-}
+/*FOOTER*/
+
 
 .footer{
 	background-color: #001d52;
 	color:  white;
-/*	text-align: center;*/
 	height: 40vh;
 	left: 0;
 	bottom: 0;
 	min-height: 230px;
 	position: relatives;
 	background-size: 100%;
-	/*	margin-bottom: 30%;*/
 	color: white;
 	font-family: 'PT Sans', sans-serif;
 	font-weight: 400;
 	font-size: 1em;
-/*	display: flex;*/
-	/*grid-template-columns: 1fr 1 fr;*/
-/*	justify-content: center;
-	align-items: center;*/
 }
 
 
 .footer-content {
 	display: flex;
-/*	justify-content: center;*/
 	align-items: center;
 	padding: 30px;
 	padding-left: 45px;
@@ -410,15 +430,5 @@ section {
 }
 
 
-.s1, .s3 {
-    position: relative;
-    opacity: 0.65;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    background-size: 100%;
-}
 
 </style>

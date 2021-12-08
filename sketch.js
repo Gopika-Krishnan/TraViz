@@ -57,12 +57,17 @@ function preload() {
 
 function setup() {
 	// Adjust canvas height to window height
-	canvas = createCanvas(ww, hh);
+	// createCanvas(ww, hh).parent('visualization');
+  let canvas = createCanvas(ww, hh);
+  canvas.parent("visualization")
+  canvas.style("display", "block")
 
 	// Load flight data from table to objects
 	// Had to be done in setup because
 	// doing it in preload() broke it
 	loadFlights();
+
+  // document.getElementById('visualization').appendChild(canvas);
 }
 
 function draw() {

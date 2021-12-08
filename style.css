@@ -372,6 +372,11 @@ section {
 
 /*PLAN TRIP PAGE*/
 
+/*the map*/
+.visualization {
+	margin:  25%;
+}
+
 /*form for inputting data*/
 .viz-form {
 	margin:  25px;
